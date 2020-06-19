@@ -1,7 +1,3 @@
-// programa que calcula a média
-// das notas dos estudante e envia
-// mensagem do cálculo da média
-
 const alunosTurmaA = [
     {
         name: 'Diego',
@@ -63,9 +59,6 @@ function sendMessage(media, turma) {
 
 sendMessage(media1,'alunosTurmaA')
 sendMessage(media2,'alunosTurmaB' )
-
-// alunos reprovados com nota < 5
-// enviar mensagem
 
 function reproved(aluno) {
     aluno.reprovado = false
