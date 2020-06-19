@@ -2,7 +2,7 @@
 // das notas dos estudante e envia
 // mensagem do cálculo da média
 
-const studentsClassA = [
+const alunosTurmaA = [
     {
         name: 'Diego',
         note: 9.8
@@ -13,16 +13,16 @@ const studentsClassA = [
     },
     {
         name:'Samara',
-        note: 2.0
+        note: 5.0
     },
     {
-        bane: 'Tairone',
+        name: 'Tairone',
         note: 10.0
     }
 ]
 
 
-const studentsClassB = [
+const alunosTurmaB = [
     {
         name: 'Kaio',
         note: 9.8
@@ -37,26 +37,29 @@ const studentsClassB = [
     }
 ]
 
-function calAverage(students) {
-    let sum = 0;
-    for (let i = 0; i < students.lenght; i++) {
-        sum = sum + students[i].note
+function calculaMedia(alunos) {
+    let soma = 0;
+    for (let i = 0; i < alunos.length; i++) { 
+        soma = soma + alunos[i].note
     }
-
-const average = sum / students.lenght
-return average
-
-const average1 = calAverage(studentsClassA)
-const average2 = calAverage(studentsClassB)
-
-
-function sendMessage(average) {
-    if (average > 5) {
-        console.log (`Parabéns, a média da turma ${class} foi de ${average}`)
-} else {
-    console.log(`A média da turma ${class} é menor que 5`)
-}
+    
+    const media = soma / alunos.length
+    
+    return media
 }
 
-sendMessage(average1,'studentsClassA')
-sendMessage(average2,'studentsClassB')
+
+const media1 = calculaMedia(alunosTurmaA)
+const media2 = calculaMedia(alunosTurmaB)
+
+
+function sendMessage(media, turma) {
+    if (media > 5) {
+        console.log (`Parabéns, a média da turma ${turma} foi de ${media}`) 
+    }  else {
+    console.log(`A média da turma ${turma} é menor que 5`)
+    }
+}
+
+sendMessage(media1,'alunosTurmaA')
+sendMessage(media2,'alunosTurmaB' )
