@@ -13,7 +13,7 @@ const alunosTurmaA = [
     },
     {
         name:'Samara',
-        note: 5.0
+        note: 3.0
     },
     {
         name: 'Tairone',
@@ -63,3 +63,30 @@ function sendMessage(media, turma) {
 
 sendMessage(media1,'alunosTurmaA')
 sendMessage(media2,'alunosTurmaB' )
+
+// alunos reprovados com nota < 5
+// enviar mensagem
+
+function reproved(aluno) {
+    aluno.reprovado = false
+    if (aluno.note < 5) {
+        aluno.reprovado = true
+    }
+}
+
+
+function message(aluno) {
+    if (aluno.reprovado) {
+        console.log(`o aluno ${aluno.name} está reprovado`)
+    }
+}
+
+function alunoReprovado (alunos) {
+    for (let aluno of alunos) {
+        reproved(aluno);
+        message(aluno)
+    }
+}
+
+alunoReprovado(alunosTurmaA)
+alunoReprovado(alunosTurmaB)
